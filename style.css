@@ -1,0 +1,16 @@
+@font-face {
+    font-family: "Norse-Bold";
+    src: url(Norse-Bold.otf);
+}
+
+main {
+    display: flex;
+}
+
+aside {
+    background-image: url(/images/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
