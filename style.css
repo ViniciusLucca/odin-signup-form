@@ -13,6 +13,11 @@ body {
     width: 100vw;
 }
 
+h1, h2{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
 main {
     display: flex;
     font-family: Arial, Helvetica, sans-serif;
@@ -28,30 +33,35 @@ section {
     flex: 2;
     background-color: blue;
     gap: 50px;
+    padding-top: 120px;
 }
 
 .form-control-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-		gap: 5px;
+    gap: 80px;
     align-items: center;
     background-color: rosybrown;
     height: fit-content;
+    margin-top: 40px;
 }
 m
 .form-control {
     flex: 0 0 calc(100%/2);
-		/* padding: 25px; */
-		background-color: white;
+    /* padding: 25px; */
+    background-color: white;
 }
 
 .form-control > p {
     flex: 0 0 100%;
-
+    
 }
 .form-control > input {
-    width: 200px;
+    width: 275px;
+    height: 1.4rem;
+    font-size: 1.4rem;
+    display: block;
 }
 
 aside {
@@ -89,4 +99,22 @@ div.logo p {
 
 aside footer {
     background-color: greenyellow;
+}
+
+div.main-form-container {
+    background-color: antiquewhite;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+fieldset > div.form-control:last-of-type {
+    margin-top: 20px;
+}
+
+div.padding-left {
+    padding-left: 60px;
+}
+
+form button[type="submit"]{
+    margin: 20px, 0;
 }
