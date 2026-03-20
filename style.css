@@ -24,9 +24,34 @@ main {
 
 section {
     display: flex;
+    flex-direction: column;
     flex: 2;
     background-color: blue;
     gap: 50px;
+}
+
+.form-control-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+		gap: 5px;
+    align-items: center;
+    background-color: rosybrown;
+    height: fit-content;
+}
+m
+.form-control {
+    flex: 0 0 calc(100%/2);
+		/* padding: 25px; */
+		background-color: white;
+}
+
+.form-control > p {
+    flex: 0 0 100%;
+
+}
+.form-control > input {
+    width: 200px;
 }
 
 aside {

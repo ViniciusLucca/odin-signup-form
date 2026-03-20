@@ -17,24 +17,36 @@
         <section>
             <h1>Sign Up</h1>
             <p>This is not a real online service! Yet, it looks just like one. Did you like the looks? Sign up <em>now</em> and enjoy.</p>
-
+            
             <p>You <em>know</em> you want to.</p>
-
-            <p>Just do it!</p>
-
-            <form action="" method="get">
-                <label for="first-name">First name</label>
-                <input type="text" id="first-name" name="first-name" required>
-
-                <label for="last-name">Last name</label>
-                <input type="text" id="last-name" name="last-name" required>
-
-                <label for="user-pwd">Password</label>
-                <input type="password" id="user-pwd" name="password" required>
+            
+            <form action="#" method="get">
+                <p>Just do it!</p>
+                <div class="form-control-container">
+                    <fieldset>
+                        <div class="form-control">
+                            <label for="first-name">First name</label>
+                            <input type="text" id="first-name" name="first-name" required>
+                        </div>
+                        
+                        <div class="form-control">
+                            <label for="last-name">Last name</label>
+                            <input type="text" id="last-name" name="last-name" required>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <div class="form-control">
+                            <label for="user-pwd">Password</label>
+                            <input type="password" id="user-pwd" name="password" required>
+                        </div>
+                        
+                        <div class="form-control">
+                            <label for="pwd-confrm">Confirm Password</label>
+                            <input type="password" id="pwd-confrm" name="pwd-confrm" required>
+                        </div>
+                    </fieldset>
+                </div>
                 
-                <label for="pwd-confrm">Confirm Password</label>
-                <input type="password" id="pwd-confrm" name="pwd-confrm" required>
-
                 <button type="submit">Create Account</button>
                 <p>Already have an account? <a href="#">Log in</a></p>
             </form>
