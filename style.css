@@ -8,6 +8,7 @@
     padding: 0;
 }
 
+/* Fazer o body tomar todo o espaço da tela */
 body {
     height: 100vh;
     width: 100vw;
@@ -19,62 +20,71 @@ h1, h2{
 }
 
 main {
-    display: flex;
+    display: flex; /* Usar flexbox para fazer leiaute de 2 colunas*/
     font-family: Arial, Helvetica, sans-serif;
     font-size: larger;
-    background-color: green;
+    background-color: green; /* TEMPORÁRIO: facilitar visualização entre elementos durante desenvolvimento */
     height: 100%;
     width: 100%;
 }
 
 section {
-    display: flex;
+    /* Usar flexbox em coluna para separar texto de formulário, tendando seguir leiaute da imagem de referência */
+    display: flex; 
     flex-direction: column;
-    flex: 2;
-    background-color: blue;
+    flex-basis: auto; /* Preencher o restante do espaço disponível, forçando aside a sempre ser menor que section, seguindo leiaute de referência */
     gap: 50px;
-    padding-top: 120px;
+
+    background-color: blue;/* TEMPORÁRIO: facilitar visualização entre elementos durante desenvolvimento */
+    
+    padding-top: 120px; /* Espaço entre topo da tela e formulário, seguindo imagem de referência */
 }
 
 .form-control-container {
-    display: flex;
+    /* 
+        Uso de flexbox + wrap para seguir leiaute de referência, criando 2 linhas de controles de formulário 
+
+        OBS.: Me confundi, e acabei criando 2 COLUNAS de controles de formulário. Visualmente, acabou dando na mesma :P
+    */
+    display: flex; 
     flex-wrap: wrap;
     justify-content: flex-start;
     gap: 80px;
     align-items: center;
-    background-color: rosybrown;
-    height: fit-content;
     margin-top: 40px;
-}
-m
-.form-control {
-    flex: 0 0 calc(100%/2);
-    /* padding: 25px; */
-    background-color: white;
+    
+    background-color: rosybrown; /* TEMPORÁRIO: facilitar visualização entre elementos durante desenvolvimento */
+    
+    height: fit-content; /* Não sei o que isso faz, nem lembro porque coloquei aqui, mas deve controlar o tamanho do input (?).*/
 }
 
-.form-control > p {
-    flex: 0 0 100%;
+.form-control {
+    flex: 0 0 calc(100%/2); /* Gambiarra para deixar 2 campos do formulário por linha (no caso, coluna, porque acabei me confundindo no CSS. Acaba que visualmente, dá na mesma XD) */
     
+    background-color: white;/* TEMPORÁRIO: facilitar visualização entre elementos durante desenvolvimento */
 }
+
 .form-control > input {
-    width: 275px;
-    height: 1.4rem;
+    /* Padronizar tamanho de inputs */
+    width: 275px; 
+    height: 1.4rem; 
     font-size: 1.4rem;
-    display: block;
+    
+    display: block; /* Não como funciona, mas faz o input ficar abaixo de sua label, seguindo o leiaute de referência */
 }
 
 aside {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    flex: 1;
-    background-image: url(/images/background.jpg);
+    flex: 0 0 18%;
+
+    /* ARRUMAR: Por algum motivo, a imagem não aparece, porque 'main' acaba ficando na frente dela. */
+    background-image: url("./images/background.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     background-size: contain;
-    background-color: aqua;
 }
 
 div.logo {
@@ -87,7 +97,8 @@ div.logo {
 div.logo img {
     height: 1em;
     margin-top: 0;    
-    /*An attemp to make the image stand beside of the text*/
+    
+    /* Deixar o texto ao lado da imagem do logo */
     display: inline-block;
     vertical-align: middle;
 }
@@ -98,11 +109,12 @@ div.logo p {
 }
 
 aside footer {
-    background-color: greenyellow;
+    background-color: greenyellow; /* TEMPORÁRIO: facilitar visualização entre elementos durante desenvolvimento */
 }
 
 div.main-form-container {
-    background-color: antiquewhite;
+    background-color: antiquewhite;/* TEMPORÁRIO: facilitar visualização entre elementos durante desenvolvimento */
+    
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -117,4 +129,8 @@ div.padding-left {
 
 form button[type="submit"]{
     margin: 20px, 0;
+}
+
+section > *:not(form), form > *{
+    padding-left: 60px;
 }
