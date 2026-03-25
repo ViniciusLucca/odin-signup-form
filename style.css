@@ -3,9 +3,13 @@
     src: url(Norse-Bold.otf);
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Fonte personalizada, indicada por The Odin Project. */
 * {
     margin: 0;
     padding: 0;
+    font-family: "Montserrat", sans-serif;
 }
 
 /* Fazer o body tomar todo o espaço da tela */
@@ -14,16 +18,9 @@ body {
     width: 100vw;
 }
 
-h1, h2{
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-}
-
 main {
     display: flex; /* Usar flexbox para fazer leiaute de 2 colunas*/
     font-family: Arial, Helvetica, sans-serif;
-    font-size: larger;
-    background-color: green; /* TEMPORÁRIO: facilitar visualização entre elementos durante desenvolvimento */
     height: 100%;
     width: 100%;
 }
@@ -33,7 +30,7 @@ aside {
     flex-direction: column;
     justify-content: space-between;
     flex: 0 0 28%;
-
+    
     /* ARRUMAR: Por algum motivo, a imagem não aparece, porque 'main' acaba ficando na frente dela. */
     background-image: url("images/background.jpg");
     background-size: cover;
@@ -70,17 +67,58 @@ section {
     flex-direction: column;
     flex-basis: auto; /* Preencher o restante do espaço disponível, forçando aside a sempre ser menor que section, seguindo leiaute de referência */
     gap: 50px;
-
-    background-color: blue;/* TEMPORÁRIO: facilitar visualização entre elementos durante desenvolvimento */
     
-    padding-top: 120px; /* Espaço entre topo da tela e formulário, seguindo imagem de referência */
+    padding-top: 100px; /* Espaço entre topo da tela e formulário, seguindo imagem de referência */
+    background-color: #f9fafc;
+}
+
+section .textos {
+    max-width: 70%;
+    height: 130px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+section .textos h2 {
+    color: black;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+div.main-form-container {
+    background-color: #ffffff;/* TEMPORÁRIO: facilitar visualização entre elementos durante desenvolvimento */
+    
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 17px;
+    box-shadow: 0px 0px 8px #c5c5c5;
+}
+
+div.main-form-container h2 {
+    font-size: 1.4rem;
+}
+
+fieldset {
+    border: none;
+    height: 130px;
+}
+
+fieldset > div.form-control:last-of-type {
+    margin-top: 20px;
+}
+
+fieldset label {
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 6px;
 }
 
 .form-control-container {
     /* 
-        Uso de flexbox + wrap para seguir leiaute de referência, criando 2 linhas de controles de formulário 
-
-        OBS.: Me confundi, e acabei criando 2 COLUNAS de controles de formulário. Visualmente, acabou dando na mesma :P
+    Uso de flexbox + wrap para seguir leiaute de referência, criando 2 linhas de controles de formulário 
+    
+    OBS.: Me confundi, e acabei criando 2 COLUNAS de controles de formulário. Visualmente, acabou dando na mesma :P
     */
     display: flex; 
     flex-wrap: wrap;
@@ -88,8 +126,6 @@ section {
     gap: 80px;
     align-items: center;
     margin-top: 40px;
-    
-    background-color: rosybrown; /* TEMPORÁRIO: facilitar visualização entre elementos durante desenvolvimento */
     
     height: fit-content; /* Não sei o que isso faz, nem lembro porque coloquei aqui, mas deve controlar o tamanho do input (?).*/
 }
@@ -104,20 +140,28 @@ section {
     /* Padronizar tamanho de inputs */
     width: 275px; 
     height: 1.4rem; 
-    font-size: 1.4rem;
-    
+    font-size: 1rem;
+    padding: 2px;
+    padding-left: 5px;
+
     display: block; /* Não como funciona, mas faz o input ficar abaixo de sua label, seguindo o leiaute de referência */
+
+    border: 1px solid #c7c7c7;
+    border-radius: 4px;
+    outline: none;
 }
 
-div.main-form-container {
-    background-color: antiquewhite;/* TEMPORÁRIO: facilitar visualização entre elementos durante desenvolvimento */
-    
-    padding-top: 20px;
-    padding-bottom: 20px;
+.form-control > input:focus {
+    border-color: lightskyblue;
+    box-shadow: 1px 1px 5px rgb(184, 184, 184);
 }
 
-fieldset > div.form-control:last-of-type {
-    margin-top: 20px;
+.form-control > input:user-invalid {
+    border-color: lightcoral;
+}
+
+.form-control > input:user-valid {
+    border-color: lightgreen;
 }
 
 div.padding-left {
@@ -125,7 +169,23 @@ div.padding-left {
 }
 
 form button[type="submit"]{
-    margin: 20px, 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: green;
+    color: white;
+    font-weight: 600;
+    font-size: 17px;
+    width: 180px;
+    padding: 13px 23px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgb(158, 158, 158);
+    cursor: pointer;
+}
+
+form a {
+    color: green;
+    text-decoration: none;
 }
 
 section > *:not(form), form > *{
